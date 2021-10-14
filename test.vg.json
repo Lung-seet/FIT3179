@@ -21,15 +21,20 @@
                     }
                 },
                 "key": "properties.vic_loca_2"
-            }
+            },
+            "as": "sub"
         }
     ],
     "mark": {
         "type": "geoshape"
     },
     "encoding": {
+        "shape": {
+            "field": "sub",
+            "type": "geojson"
+        },
         "color": {
-            "value": "blue"
+            "field": "Price", "type": "quantitative"
         },
         "tooltip": [
             {
@@ -37,7 +42,7 @@
                 "type": "nominal"
             },
             {
-                "field": "Price",
+                "field": "datum.Price",
                 "type": "quantitative"
             }
         ]
