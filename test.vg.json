@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "title": "House Prices of Melbourne",
+    "projection": {
+        "type": "equirectangular"
+    },
+    "data": {
+        "url": "data/melbourne_house_prices.csv"
+    },
+    "transform": [
+        {
+            "lookup": "Suburb",
+            "from": {
+                "data": {
+                    "url": "data/victoria.topo.json",
+                    "format": {
+                        "type": "topojson",
+                        "feature": "victoria.geo"
+                    }
+                },
+                "key": "properties.vic_loca_2"
+            }
+        }
+    ],
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "value": "blue"
+        },
+        "tooltip": [
+            {
+                "field": "Suburb",
+                "type": "nominal"
+            },
+            {
+                "field": "Price",
+                "type": "quantitative"
+            }
+        ]
+    }
+}
