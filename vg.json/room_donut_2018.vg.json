@@ -88,7 +88,7 @@
                 "type": "text",
                 "align": "right",
                 "dx": 30,
-                "dy": -160,
+                "dy": -130,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -112,8 +112,8 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": 140,
-                "dy": -110,
+                "dx": 120,
+                "dy": -90,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -137,8 +137,8 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": 40,
-                "dy": 165,
+                "dx": 35,
+                "dy": 135,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -162,8 +162,8 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": -130,
-                "dy": -85,
+                "dx": -110,
+                "dy": -75,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -188,7 +188,7 @@
                 "type": "text",
                 "align": "right",
                 "dx": -20,
-                "dy": -158,
+                "dy": -130,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -213,7 +213,7 @@
                 "type": "text",
                 "align": "right",
                 "dx": 5,
-                "dy": -160,
+                "dy": -132,
                 "fontSize": 11.5
             },
             "encoding": {

@@ -78,7 +78,7 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": 183,
+                "dx": 160,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -102,8 +102,8 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": -95,
-                "dy": -125,
+                "dx": -75,
+                "dy": -110,
                 "fontSize": 11.5
             },
             "encoding": {
@@ -127,7 +127,7 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "dx": -160,
+                "dx": -135,
                 "fontSize": 11.5
             },
             "encoding": {
