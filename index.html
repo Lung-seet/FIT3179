@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Melbourne Property</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <p class="center">Melbourne Property</p>
+        </div>
+        <p class="center-subtitle">Number of <strong>Rooms</strong> in each Year</p>
+        <div class="flex-three-container">
+            <div class="flex-one-third">
+                <div id="room_2016"></div>
+            </div>
+            <div class="flex-one-third">
+                <div id="room_2017"></div>
+            </div>
+            <div class="flex-one-third">
+                <div id="room_2018"></div>
+            </div>
+        </div>
+
+        <p class=center-p>Number of Rooms</p>
+        <div class="center-legend">
+            <div class="row">
+                <div class='box one'></div>
+                <span>1</span>
+            </div>
+            <div class="row">
+                <div class='box two'></div>
+                <span>2</span>
+            </div>
+
+            <div class="row">
+                <div class='box three'></div>
+                <span>3</span>
+            </div>
+
+            <div class="row">
+                <div class='box four'></div>
+                <span>4</span>
+            </div>
+
+            <div class="row">
+                <div class='box five'></div>
+                <span>5</span>
+            </div>
+
+            <div class="row">
+                <div class='box six'></div>
+                <span>6</span>
+            </div>
+        </div>
+
+        <p class="center-subtitle">Type of <strong>House</strong> in each Year</p>
+        <div class="flex-three-container">
+            <div class="flex-one-third">
+                <div id="house_2016"></div>
+            </div>
+            <div class="flex-one-third">
+                <div id="house_2017"></div>
+            </div>
+            <div class="flex-one-third">
+                <div id="house_2018"></div>
+            </div>
+        </div>
+
+        <p class=center-p>Type of House</p>
+        <div class="center-legend">
+            <div class="row">
+                <div class='box one'></div>
+                <span>House</span>
+            </div>
+            <div class="row">
+                <div class='box two'></div>
+                <span>Town House</span>
+            </div>
+
+            <div class="row">
+                <div class='box three'></div>
+                <span>Unit</span>
+            </div>
+        </div>
+
+        <p class="center-subtitle"><strong>Average House Prices</strong> of Melbourne between <strong>2016</strong> and
+            <strong>2018</strong>
+        </p>
+        <div class="flex-map">
+            <div class="flex-map-first-child">
+                <div id="map"></div>
+            </div>
+            <div class="flex-map-second-child">
+                <p class="flex-center">The average house prices of houses is heavily affected by the position and area
+                    that the house is situated in. This can be seen through the southeast part of the map, with higher
+                    average prices compared to other parts. This could be contributed to things like landmark (beaches,
+                    shopping centres), food hotspots (Richmond, South Yarra, Hawthorn).</p>
+            </div>
+        </div>
+
+        <p class="center-subtitle"><strong>Price</strong> vs <strong>Distance</strong></p>
+        <div class="flex-container">
+            <div class="flex-left-child">
+                <p class="flex-center">The average house prices of houses is heavily affected by the distance of the
+                    house from the city center. The houses closer to the city has a much higher average compared the
+                    houses further in the suburbs. This is visualised with the price range of the first 10km with price
+                    ranging from <b><i>$600,000</i></b> to <b><i>$2,500,000</i></b> and 30-40km away with price ranging
+                    from <b><i>$400,000</i></b> to <b><i>$1,200,000</i></b></p>
+            </div>
+            <div class="flex-right-second-child">
+                <div id="bubble"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var bubble = "vg.json/bubble.vg.json";
+    vegaEmbed('#bubble', bubble).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var map = "vg.json/melbourne.vg.json";
+    vegaEmbed('#map', map).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var room_2016 = "vg.json/room_donut_2016.vg.json";
+    vegaEmbed('#room_2016', room_2016).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var room_2017 = "vg.json/room_donut_2017.vg.json";
+    vegaEmbed('#room_2017', room_2017).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var room_2018 = "vg.json/room_donut_2018.vg.json";
+    vegaEmbed('#room_2018', room_2018).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var house_2016 = "vg.json/house_donut_2016.vg.json";
+    vegaEmbed('#house_2016', house_2016).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var house_2017 = "vg.json/house_donut_2017.vg.json";
+    vegaEmbed('#house_2017', house_2017).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var house_2018 = "vg.json/house_donut_2018.vg.json";
+    vegaEmbed('#house_2018', house_2018).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+</script>
+
+</html>

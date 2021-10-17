@@ -1,0 +1,151 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 250,
+    "height": 250,
+    "background": "#d7dee0",
+    "data": {
+        "values": [
+            {
+                "Type": "House",
+                "Year": 2017,
+                "Count": 14466
+            },
+            {
+                "Type": "Townhouse",
+                "Year": 2017,
+                "Count": 2024
+            },
+            {
+                "Type": "Unit",
+                "Year": 2017,
+                "Count": 3786
+            }
+        ]
+    },
+    "config": {
+        "legend": {
+            "disable": true
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "padAngle": 0.01,
+                "innerRadius": 105,
+                "cornerRadius": 5
+            },
+            "encoding": {
+                "theta": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Type",
+                    "type": "nominal",
+                    "scale":{
+                        "range": ["#332288", "#117733", "#44aa99"]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Type",
+                        "type": "nominal",
+                        "title": "Type of House"
+                    },
+                    {
+                        "field": "Count",
+                        "type": "quantitative",
+                        "title": "Count"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "fontSize": 36
+            },
+            "encoding": {
+                "text": {
+                    "value": "2017"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 183,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#332288"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Type'] == 'House'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -95,
+                "dy": -125,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#44aa99"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Type'] == 'Unit'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -160,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#117733"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Type'] == 'Townhouse'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

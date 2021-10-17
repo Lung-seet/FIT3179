@@ -1,0 +1,237 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 250,
+    "height": 250,
+    "background": "#d7dee0",
+    "data": {
+        "values": [
+            {
+                "Rooms": 1,
+                "Count": 704
+            },
+            {
+                "Rooms": 2,
+                "Count": 4481
+            },
+            {
+                "Rooms": 3,
+                "Count": 9077
+            },
+            {
+                "Rooms": 4,
+                "Count": 4829
+            },
+            {
+                "Rooms": 5,
+                "Count": 1037
+            },
+            {
+                "Rooms": 6,
+                "Count": 119
+            }
+        ]
+    },
+    "config": {
+        "legend": {
+            "disable": true
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "padAngle": 0.01,
+                "innerRadius": 105,
+                "cornerRadius": 5
+            },
+            "encoding": {
+                "theta": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Rooms",
+                    "type": "nominal",
+                    "scale":{
+                        "range": ["#332288", "#117733", "#44aa99", "#88ccee", "#ddcc77", "#cc6677"]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Rooms",
+                        "type": "nominal",
+                        "title": "Number of rooms"
+                    },
+                    {
+                        "field": "Count",
+                        "type": "quantitative",
+                        "title": "Count"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "fontSize": 36
+            },
+            "encoding": {
+                "text": {
+                    "value": "2016"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 30,
+                "dy": -160,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#332288"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '1'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 140,
+                "dy": -110,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#117733"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '2'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 40,
+                "dy": 165,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#44aa99"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '3'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -130,
+                "dy": -85,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#88ccee"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '4'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -20,
+                "dy": -158,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#ddcc77"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '5'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": 5,
+                "dy": -160,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "#cc6677"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Rooms'] == '6'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

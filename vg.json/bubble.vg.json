@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 600,
+    "data": {
+        "url": "data/melbourne_house_prices.csv"
+    },
+    "params": [
+        {
+            "name": "Year_selection",
+            "bind": {
+                "input": "range",
+                "min": 2016,
+                "max": 2018,
+                "step": 1,
+                "name": "Year Selection: "
+            }
+        },
+        {
+            "name": "Minimum_distance_selection",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 39,
+                "step": 1,
+                "name": "Minimum Distance Selection: "
+            }
+        },
+        {
+            "name": "Maximum_distance_selection",
+            "value": 40,
+            "bind": {
+                "input": "range",
+                "min": 1,
+                "max": 40,
+                "step": 1,
+                "name": "Maximum Distance Selection: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.Distance < 40"
+        },
+        {
+            "filter": "Maximum_distance_selection == null || datum.Distance <= Maximum_distance_selection"
+        },
+        {
+            "filter": "Minimum_distance_selection == null || datum.Distance >= Minimum_distance_selection"
+        },
+        {
+            "filter": "Year_selection == null || datum.Year == Year_selection"
+        }
+    ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "Price",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "y": {
+            "field": "Distance",
+            "type": "quantitative"
+        },
+        "size": {
+            "value": 100
+        },
+        "color": {
+            "field": "Price",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "tooltip": [
+            {
+                "field": "Suburb",
+                "type": "nominal"
+            },
+            {
+                "field": "Price",
+                "type": "quantitative",
+                "aggregate": "mean",
+                "format": ",d",
+                "title": "Average Price"
+            },
+            {
+                "field": "Rooms",
+                "type": "quantitative",
+                "aggregate": "mean",
+                "format": "d",
+                "title": "Average Number of Rooms"
+            }
+        ]
+    }
+}

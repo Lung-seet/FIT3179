@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap');
+
+html {
+    font-family: Open Sans, sans-serif;
+}
+
+body {
+    background: #d7dee0;
+}
+
+.main {
+    position:relative;
+}
+
+.header {
+    display: flexbox;
+    width: 90%;
+    height: 140px;
+    margin-left: auto; 
+    margin-right: auto;
+    justify-content: center;
+    color: white;
+    background-color: #415379;
+    opacity: 0.8;
+}
+
+.center {
+    font-weight: bold;
+    font-size: 48pt;
+    top: 10%;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.center-subtitle {
+    font-size: 18pt;
+    top: 10%;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sub{
+    font-size: 18pt;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.flex-map {
+    display: flex;
+    height: 900px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-map-first-child {
+    flex: 2.5;
+    margin: 10px;
+    padding: 20px;
+}
+
+.flex-map-second-child {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+}
+
+.flex-three-container {
+    display: flex;
+    height: 400px;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding-left:14%;
+}
+
+.flex-one-third{
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.flex-container {
+    display: flex;
+    height: 800px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-left-child {
+    flex: 1.5;
+    margin: 10px;
+    padding-left: 100px;
+}
+
+
+.flex-right-second-child {
+    flex: 2;
+    height: 734px;
+    margin: 10px;
+    padding-right: 100px;
+}
+
+.flex-right-second-child .flex-center {
+    text-align: center;
+    padding-top: 33%;
+}
+
+.left {
+    left: 10%;
+    position: relative;
+    padding: 10px;
+    text-align: left;
+}
+
+.right {
+    right: 10%;
+    position: relative;
+    padding: 10px;
+    text-align: left;
+}
+
+.center-legend {
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-p {
+    font-weight: bold;
+    font-size: 12pt;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.row {
+    display: flex;
+    align-items : center;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+.box {
+    height: 10px;
+    width: 10px;
+    margin-right : 5px;
+}
+
+.one {
+    background-color: #332288;
+}
+
+.two {
+    background-color: #117733;
+}
+
+.three {
+    background-color: #44aa99;
+}
+
+.four {
+    background-color: #88ccee;
+}
+
+.five {
+    background-color: #ddcc77;
+}
+
+.six {
+    background-color: #cc6677;
+}
