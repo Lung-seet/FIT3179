@@ -3,7 +3,7 @@
     "width": 1000,
     "height": 600,
     "data": {
-        "url": "data/melbourne_house_prices.csv"
+        "url": "../data/melbourne_house_prices.csv"
     },
     "params": [
         {
@@ -53,44 +53,93 @@
             "filter": "Year_selection == null || datum.Year == Year_selection"
         }
     ],
-    "mark": "circle",
-    "encoding": {
-        "x": {
-            "field": "Price",
-            "type": "quantitative",
-            "aggregate": "mean"
-        },
-        "y": {
-            "field": "Distance",
-            "type": "quantitative"
-        },
-        "size": {
-            "value": 100
-        },
-        "color": {
-            "field": "Price",
-            "type": "quantitative",
-            "aggregate": "mean"
-        },
-        "tooltip": [
-            {
-                "field": "Suburb",
-                "type": "nominal"
-            },
-            {
-                "field": "Price",
-                "type": "quantitative",
-                "aggregate": "mean",
-                "format": ",d",
-                "title": "Average Price"
-            },
-            {
-                "field": "Rooms",
-                "type": "quantitative",
-                "aggregate": "mean",
-                "format": "d",
-                "title": "Average Number of Rooms"
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "Price",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "y": {
+                    "field": "Distance",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "value": 100
+                },
+                "color": {
+                    "field": "Price",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "tooltip": [
+                    {
+                        "field": "Suburb",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Price",
+                        "type": "quantitative",
+                        "aggregate": "mean",
+                        "format": ",d",
+                        "title": "Average Price"
+                    }
+                ]
             }
-        ]
-    }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": 560,
+                "dy": 196,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Suburb",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "gray"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Suburb'] == 'DEEPDENE'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": -350,
+                "dy": -253,
+                "fontSize": 11.5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Suburb",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "gray"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Suburb'] == 'DARLEY'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        }
+    ]
 }
