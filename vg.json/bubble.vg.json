@@ -3,7 +3,7 @@
     "width": 1000,
     "height": 600,
     "data": {
-        "url": "../data/melbourne_house_prices.csv"
+        "url": "/data/melbourne_house_prices.csv"
     },
     "params": [
         {

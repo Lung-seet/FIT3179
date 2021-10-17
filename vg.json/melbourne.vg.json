@@ -8,7 +8,7 @@
     "layer": [
         {
             "data": {
-                "url": "../data/victoria.topo.json",
+                "url": "/data/victoria.topo.json",
                 "format": {
                     "type": "topojson",
                     "feature": "victoria.geo"
@@ -19,7 +19,7 @@
                     "lookup": "properties.vic_loca_2",
                     "from": {
                         "data": {
-                            "url": "../data/melbourne_house_prices.csv"
+                            "url": "/data/melbourne_house_prices.csv"
                         },
                         "key": "Suburb"
                     },
@@ -51,14 +51,14 @@
         },
         {
             "data": {
-                "url": "../data/melbourne_house_prices.csv"
+                "url": "/data/melbourne_house_prices.csv"
             },
             "transform": [
                 {
                     "lookup": "Suburb",
                     "from": {
                         "data": {
-                            "url": "../data/victoria.topo.json",
+                            "url": "/data/victoria.topo.json",
                             "format": {
                                 "type": "topojson",
                                 "feature": "victoria.geo"
